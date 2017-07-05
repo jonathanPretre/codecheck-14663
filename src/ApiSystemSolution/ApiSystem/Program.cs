@@ -41,7 +41,7 @@ namespace ApiSystem
             }
             else
             {
-                Console.WriteLine("BadRequest, missing argument");
+                Console.WriteLine("BadRequest");
             }
             // Console.ReadKey(); // pour les testes
         }
