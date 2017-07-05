@@ -35,13 +35,12 @@ namespace ApiSystem
                 {
                     result = recursive(int.Parse(args[1]));
                 }
-                Console.ReadKey();
+                Console.WriteLine(result);
             }
             else
             {
                 Console.WriteLine("BadRequest, missing argument");
             }
-            Console.ReadKey();
         }
 
         static int recursive(int n)
