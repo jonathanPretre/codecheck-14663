@@ -41,7 +41,7 @@ namespace ApiSystem
             }
             catch(IndexOutOfRangeException e)
             {
-                throw;
+                Console.WriteLine(e.Message);
             }
             // Console.ReadKey(); // pour les testes
         }
