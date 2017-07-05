@@ -17,8 +17,8 @@ namespace ApiSystem
 
             using (WebClient client = new WebClient())
             {
-                client.QueryString.Add("n", "4");
-                client.QueryString.Add("seed", "b0c2b89f-4862-4814-8728-ddb0b36076ba");
+                client.QueryString.Add("n", args[1]);
+                client.QueryString.Add("seed", args[0]);
                 client.Encoding = Encoding.UTF8;
                 jsonString = client.DownloadString(page);
             }
