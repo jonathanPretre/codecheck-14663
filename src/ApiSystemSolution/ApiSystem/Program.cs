@@ -15,56 +15,26 @@ namespace ApiSystem
         static void Main(string[] args)
         {
             var page = new Uri("http://challenge-server.code-check.io/api/recursive/ask");
-            string jsonString;
-
-            string[] tabtest = { "b0c2b89f-4862-4814-8728-ddb0b36076b4", "4" };
-
+            //string[] tabtest = { "b0c2b89f-4862-4814-8728-ddb0b36076b4", "4" };
             int result;
 
-            if (args.Length == 0)
+            if (args.Length == 2)
             {
-                seed = tabtest[0];
-                    if (int.Parse(tabtest[1]) == 0)
-                    {
-                        result = 1;
-                    }
-
-                    if (int.Parse(tabtest[1]) == 2)
-                    {
-                        result = 2;
-                    }
-
-                    else
-                    {
-                        result = recursive(int.Parse(tabtest[1]));
-                    }
-                    /*
-                    else
-                    {
-                        using (WebClient client = new WebClient())
-                        {
-                            client.QueryString.Add("n", args[1]);
-                            client.QueryString.Add("seed", args[0]);
-                            client.Encoding = Encoding.UTF8;
-                            jsonString = client.DownloadString(page);
-                        }
-                        dynamic json = JsonConvert.DeserializeObject(jsonString);
-                        result = json.result;
-                    }*/
-                    Console.WriteLine(result);
-                /*
-                catch (WebException ex)
+                seed = args[0];
+                if (int.Parse(args[1]) == 0)
                 {
-                    if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)
-                    {
-                        var resp = (HttpWebResponse)ex.Response;
-                        if (resp.StatusCode == HttpStatusCode.BadRequest) // HTTP 400
-                        {
-                            Console.WriteLine(HttpStatusCode.BadRequest);
-                        }
+                    result = 1;
+                }
 
-                    }
-                }*/
+                if (int.Parse(args[1]) == 2)
+                {
+                    result = 2;
+                }
+
+                else
+                {
+                    result = recursive(int.Parse(args[1]));
+                }
                 Console.ReadKey();
             }
             else
@@ -72,7 +42,6 @@ namespace ApiSystem
                 Console.WriteLine("BadRequest, missing argument");
             }
             Console.ReadKey();
-
         }
 
         static int recursive(int n)
