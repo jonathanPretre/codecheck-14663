@@ -21,12 +21,6 @@ namespace ApiSystem
 
             try
             {
-                for (int i = 0; i < args.Length; i++)
-                {
-                    string output = String.Format("args[{0}]: {0}", i, args[i]);
-                    Console.WriteLine(output);
-                }
-
                 if (int.Parse(args[1]) == 0)
                 {
 
