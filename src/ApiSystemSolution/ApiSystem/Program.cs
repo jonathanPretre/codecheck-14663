@@ -19,9 +19,6 @@ namespace ApiSystem
             //string[] tabtest = { "b0c2b89f-4862-4814-8728-ddb0b3607632", "40" }; // valeur de teste
             int result;
 
-            if (args.Length == 0)
-                throw new IndexOutOfRangeException();
-
             try
             {
                 seed = args[0];
@@ -44,7 +41,7 @@ namespace ApiSystem
             }
             catch(IndexOutOfRangeException e)
             {
-                throw new IndexOutOfRangeException();
+                Console.WriteLine(e.Message);
             }
             // Console.ReadKey(); // pour les testes
         }
